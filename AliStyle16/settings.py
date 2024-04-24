@@ -5,6 +5,9 @@ import environ
 env = environ.Env()
 environ.Env.read_env()
 
+ESKIZ_EMAIL = env('ESKIZ_EMAIL')
+ESKIZ_TOKEN = env('ESKIZ_TOKEN')
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -12,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!0b5rryeglht!op3dj^2zu#c&u!o@-x6mzt#1jcb+zp7zb8w8w'
+SECRET_KEY = str(env('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -32,7 +35,8 @@ INSTALLED_APPS = [
     # Apps
     'mainApp',
     'userApp',
-    'orderApp'
+    'orderApp',
+
 ]
 
 MIDDLEWARE = [

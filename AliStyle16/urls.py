@@ -13,4 +13,16 @@ urlpatterns = [
     path('order/', include('orderApp.urls')),
 
     path('', Home.as_view(), name='home'),
+
+
+
+    path('blank-starter/', page_blank_starter, name='about-keraksiz'),
+    path('components/', page_components, name='keraksiz'),
+    path('content/', page_content, name='page-about'),
+    path('listing-large/', listing_large, name='page-products-katta'),
+    path('offers/', offers, name='page-takliflar'),
+    path('payment/', payment, name='page-tolov-keraksiz'),
+    path('profile-address/', profile_address, name='page-adreslar-keraksiz'),
+    path('profile-main/', profile_main, name='page-profile'),
+    path('profile-orders/', profile_orders, name='page-buyurtmalar'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -16,10 +16,8 @@
                             <div class="card-body">
                                 <h4 class="card-title"><a href="#">{{ category.name }}</a></h4>
                                 <ul class="list-menu">
-                                    {% for subCategory in subCategories %}
-                                        {% if category == subCategory.category %}
-                                        <li><a href="">{{ subCategory.name }}</a></li>
-                                        {% endif %}
+                                    {% for subCategory in category.subcategory_set.all %}
+                                        <li><a href="/main/products/?subCategory_id={{ subCategory.id }}">{{ subCategory.name }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </div>
